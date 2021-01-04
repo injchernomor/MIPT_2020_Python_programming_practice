@@ -47,7 +47,7 @@ def exercise6():
 print("Для выхода из программы нажмите цифру ноль")
 Flag = True
 while Flag:
-    exercise_number = int(input("Введите номер упражнения результат которого хотите уведеть. "))
+    exercise_number = int(input("Введите номер упражнения, результат которого хотите уведеть. "))
     if exercise_number == 1:
         exercise1()
     elif exercise_number == 2:
