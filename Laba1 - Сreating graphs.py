@@ -33,21 +33,41 @@ def exercise3():
 
 
 def exercise4():
-    pass
+    with plt.xkcd():
+        chart_title = str(input("Введите название диаграммы: "))
+        print("Введите 4 раза через пробел: Название области - процентное значение области.")
+        y1, x1 = map(str, input().split())
+        y2, x2 = map(str, input().split())
+        y3, x3 = map(str, input().split())
+        y4, x4 = map(str, input().split())
+        x1 = eval(x1)
+        x2 = eval(x2)
+        x3 = eval(x3)
+        x4 = eval(x4)
+        plt.pie([x1, x2, x3, x4], labels=(y1, y2, y3, y4))
+        plt.title(chart_title)
+        plt.show()
 
 
 def exercise5():
-    pass
+    print("АААА!!!! Мне не хватает математического аппарата или умений. Разбираться лень."
+          "Лаб по физике, как и самой физики - у меня пока еще не было...")
 
 
 def exercise6():
-    pass
+    x = np.arange(-2, 2, 0.001)
+    n = 0
+    while True:
+        plt.plot(x, 0.5 ** n * np.cos(3 ** n * np.pi * x))
+        n += 1
+        plt.grid(True)
+        plt.show()
 
 
-print("Для выхода из программы нажмите цифру ноль")
+print("Для выхода из программы введите цифру ноль.")
 Flag = True
 while Flag:
-    exercise_number = int(input("Введите номер упражнения результат которого хотите уведеть. "))
+    exercise_number = int(input("Введите номер упражнения, результат которого хотите уведеть: "))
     if exercise_number == 1:
         exercise1()
     elif exercise_number == 2:
