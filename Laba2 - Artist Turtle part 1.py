@@ -17,15 +17,16 @@ def exercise2():
     right(90)
     forward(50)
 
+
 def exercise3():
     for i in range(4):
         forward(100)
         right(90)
 
 
-def exercise4():
+def exercise4(step):
     for i in range(180):
-        forward(5)
+        forward(step)
         right(2)
 
 
@@ -94,7 +95,7 @@ def exercise9():
 def exercise10():
     speed(1000)
     for i in range(6):
-        exercise4()
+        exercise4(5)
         right(60)
 
 
@@ -119,34 +120,65 @@ def exercise11():
         R += 10
 
 
-def exercise12():  # does not work
+def duga1():
+    for i in range(100):
+        forward(2)
+        right(2)
+
+
+def duga2():
+    for i in range(20):
+        forward(2)
+        right(2)
+
+
+def exercise12():
     speed(100000)
     x = 0
     y = 0
     right(270)  # разварот как на гифке
 
-    def duga1():
-        for i in range(100):
-            forward(2)
-            right(2)
-
-    def duga2():
-        for i in range(20):
-            forward(2)
-            right(2)
-
     for i in range(5):
         duga1()
-        right(90)
+        right(130)
         duga2()
 
 
 def exercise13():
-    pass
+    color("yellow", "yellow")
+    begin_fill()
+    exercise4(5)
+    end_fill()
+    goto(-40, -40)
+    color("blue", "blue")
+    begin_fill()
+    exercise4(0.5)
+    end_fill()
+    penup()
+    goto(40, -40)
+    pendown()
+    begin_fill()
+    exercise4(0.5)
+    end_fill()
+    penup()
+    goto(50, -150)
+    pendown()
+    color("red")
+    right(90)
+    duga1()
+
+
+def star(n):
+    right(180 - 180 / n)
+    forward(300)
 
 
 def exercise14():
-    pass
+    n = int(input("Введите кол-во вершин: "))
+    costil = 1
+    while costil <= n:
+        star(n)
+        costil += 1
 
 
 print("Для выхода из программы введите цифру ноль.")
@@ -160,7 +192,7 @@ while Flag:
         exercise3()
         reset()
     elif exercise_number == 4:
-        exercise4()
+        exercise4(5)
         reset()
     elif exercise_number == 5:
         exercise5()
@@ -194,5 +226,3 @@ while Flag:
         reset()
     elif exercise_number == 0:
         Flag = False
-
-exercise12()
